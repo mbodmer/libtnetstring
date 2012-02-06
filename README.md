@@ -58,4 +58,6 @@ TNetstring_value.
     is >> tns_var_;                      // decode from TNetstring stream
     int foo = boost::get<int>(tns_var);  // access int (assuming an integer) 
     
-    
+## License
+
+This software is licensed under the Boost License, see LICENSE_1_0.txt
