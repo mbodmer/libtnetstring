@@ -2,3 +2,6 @@ build/*
 build/**/*
 .settings/*
 .settings/**/*
+.project
+.cproject
+
