@@ -1,5 +1,7 @@
 build/*
 build/**/*
+doc/*
+doc/**/*
 .settings/*
 .settings/**/*
 .project
