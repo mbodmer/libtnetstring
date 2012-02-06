@@ -56,7 +56,13 @@ TNetstring_value.
     TNetstring_value tns_var;
     
     is >> tns_var_;                      // decode from TNetstring stream
-    int foo = boost::get<int>(tns_var);  // access int (assuming an integer) 
+    int foo = boost::get<int>(tns_var);  // access int (assuming an integer)
+
+## API Documentation
+
+To generate html API documentation use doxygen and the supplied Doxyfile:
+
+    doxygen
     
 ## License
 
