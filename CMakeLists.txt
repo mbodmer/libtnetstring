@@ -35,7 +35,7 @@ set(CMAKE_COLOR_MAKEFILE True)
 ################################################################################
 # find dependencies
 ################################################################################
-find_package(GoogleTest REQUIRED)
+find_package(GTest REQUIRED)
 find_package(Pthread REQUIRED)
 
 ################################################################################
