@@ -11,16 +11,41 @@ This is a header-only library, make sure the source is in the build path.
 
 ## Dependencies
 
--   Boost headers
--   google-test (to build tests only)
+-   Boost (headers only)
+-   GTest (google-test needed to build tests only)
 
-## Build tests
+## Build/Run tests
 
-To build the tests you need google-test and cmake
+To build the tests you need GTest and CMake. Make sure GTest is built and can be found by FindGTest.cmake:
 
     cd build
+    GTEST_ROOT=/usr/src/gtest/build/ cmake ..
+    make
+
+### Install / Build GTest
+
+If you first have to install GTest, here is an example:
+
+    apt-get install libgtest-dev   # equivalent to download source to /usr/src/gtest
+    cd /usr/src/gtest
+    mkdir build
+    cd build
     cmake ..
-    make all
+    make
+
+## Run tests
+
+Tests can be run bei either:
+
+    make test
+
+or
+
+    ./test_tnetstring
+
+Note: Unfortunately the tests are not implemented very robust, so sometimes they can
+fail even if the result is actually correct. Problems are mostly due to the unordered
+nature of std::unordered_map and my lazyness to not address this yet.
 
 ## Examples
 
@@ -67,3 +92,9 @@ To generate html API documentation use doxygen and the supplied Doxyfile:
 ## License
 
 This software is licensed under the Boost License, see LICENSE_1_0.txt
+
+## Feedback
+
+I hope this library is useful for you and I am happy to receive any feedback.
+You can reach me on Github.
+
