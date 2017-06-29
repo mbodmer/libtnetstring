@@ -107,7 +107,7 @@ TEST_F(Test_tnetstring_value, Encoder) {
 	TNetstring_dict dict {{"key1","Hello"}, {"key2",123}, {"key3",1.23}, {"key4",true}};
 	tns_var_ = dict;
 	os_ << tns_var_;
-	EXPECT_EQ("56:4:key3,4:1.23^4:key2,3:123#4:key4,4:true!4:key1,5:Hello,}",os_.str()) << "Encoded dictionary netstring is incorrect";
+	EXPECT_EQ("56:4:key1,5:Hello,4:key2,3:123#4:key3,4:1.23^4:key4,4:true!}",os_.str()) << "Encoded dictionary netstring is incorrect";
 	os_.str("");
 
 	} catch (...) {

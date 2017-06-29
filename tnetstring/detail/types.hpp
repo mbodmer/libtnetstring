@@ -9,7 +9,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <unordered_map>
+#include <map>
 
 #include <boost/variant.hpp>
 
@@ -29,7 +29,7 @@ typedef boost::make_recursive_variant<
 	, double
 	, bool
 	, std::vector<boost::recursive_variant_>
-	, std::unordered_map<std::string, boost::recursive_variant_>
+	, std::map<std::string, boost::recursive_variant_>
 >::type TNetstring_value;
 
 /**
@@ -40,7 +40,7 @@ typedef std::vector<TNetstring_value> TNetstring_list;
 /**
  * TNetstring dictionary, used to create (possibly recursive) dictionaries of TNetstring_values.
  */
-typedef std::unordered_map<std::string, TNetstring_value> TNetstring_dict;
+typedef std::map<std::string, TNetstring_value> TNetstring_dict;
 
 }  // ::tnetstring
 
