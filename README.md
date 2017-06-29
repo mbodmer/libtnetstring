@@ -3,7 +3,7 @@
 This library is a C++ implementation of the TNetString specification.
 TNetstring details can be found on:
 
--   http://tnetstrings.org
+-   https://tnetstrings.info
 
 ## Installation
 
@@ -11,27 +11,28 @@ This is a header-only library, make sure the source is in the build path.
 
 ## Dependencies
 
--   Boost (headers only)
--   GTest (google-test needed to build tests only)
+-   Boost (boost::variant headers)
+-   GTest (google-test needed to build tests)
 
 ## Build/Run tests
 
 To build the tests you need GTest and CMake. Make sure GTest is built and can be found by FindGTest.cmake:
 
+    mkdir build
     cd build
-    GTEST_ROOT=/usr/src/gtest/build/ cmake ..
-    make
+    GTEST_ROOT=/usr/src/gtest/build/ cmake .. -GNinja
+    ninja
 
 ### Install / Build GTest
 
 If you first have to install GTest, here is an example:
 
-    apt-get install libgtest-dev   # equivalent to download source to /usr/src/gtest
+    sudo apt install libgtest-dev   # equivalent to download source to /usr/src/gtest
     cd /usr/src/gtest
-    mkdir build
+    sudo mkdir build
     cd build
-    cmake ..
-    make
+    sudo cmake .. -GNinja
+    sudo ninja
 
 ## Run tests
 
@@ -42,10 +43,6 @@ Tests can be run bei either:
 or
 
     ./test_tnetstring
-
-Note: Unfortunately the tests are not implemented very robust, so sometimes they can
-fail even if the result is actually correct. Problems are mostly due to the unordered
-nature of std::unordered_map and my lazyness to not address this yet.
 
 ## Examples
 
@@ -65,7 +62,7 @@ Supported TNetstring_value types:
 *   TNetstring_dict
 
 While TNetstring_list and TNetstring_dict are std::vector and std::unordered_map of
-TNetstring_value. 
+TNetstring_value.
 
 ### Encoding
 
@@ -79,7 +76,7 @@ TNetstring_value.
 
     std::istream is;
     TNetstring_value tns_var;
-    
+
     is >> tns_var_;                      // decode from TNetstring stream
     int foo = boost::get<int>(tns_var);  // access int (assuming an integer)
 
@@ -88,13 +85,15 @@ TNetstring_value.
 To generate html API documentation use doxygen and the supplied Doxyfile:
 
     doxygen
-    
+
 ## License
 
 This software is licensed under the Boost License, see LICENSE_1_0.txt
 
 ## Feedback
 
-I hope this library is useful for you and I am happy to receive any feedback.
+I hope this library is useful for you and I am happy to receive any feedback
+and pull requests.
+
 You can reach me on Github.
 
