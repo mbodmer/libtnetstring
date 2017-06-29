@@ -17,17 +17,6 @@ set(CMAKE_MODULE_PATH ${CMAKE_INCLUDE_PATH} ${CMAKE_SOURCE_DIR}/cmake)
 project(libtnetstring)
 
 ################################################################################
-# Eclipse CDT parsing
-################################################################################
-SET(CMAKE_VERBOSE_MAKEFILE ON)
-IF(CMAKE_COMPILER_IS_GNUCC)
-  SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fmessage-length=0")
-ENDIF(CMAKE_COMPILER_IS_GNUCC)
-IF(CMAKE_COMPILER_IS_GNUCXX)
-  SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fmessage-length=0")
-ENDIF(CMAKE_COMPILER_IS_GNUCXX)
-
-################################################################################
 # Options
 ################################################################################
 set(CMAKE_COLOR_MAKEFILE True)
@@ -63,4 +52,3 @@ add_executable(test_tnetstring tests/test_tnetstring.cpp)
 target_link_libraries(test_tnetstring ${GTEST_LIBRARIES} ${GTEST_MAIN_LIBRARIES} ${PTHREAD_LIBRARIES})
 add_test(test_tnetstring test_tnetstring)
 
-# todo: installation
