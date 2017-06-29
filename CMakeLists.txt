@@ -26,6 +26,7 @@ set(CMAKE_COLOR_MAKEFILE True)
 ################################################################################
 find_package(GTest REQUIRED)
 find_package(Pthread REQUIRED)
+find_package(Boost REQUIRED)
 
 ################################################################################
 # include paths
