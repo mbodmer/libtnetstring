@@ -36,7 +36,7 @@ include_directories(${GTEST_INCLUDE_DIRS})
 ################################################################################
 # compile definitions
 ################################################################################
-add_definitions("-g -Wall -Wextra -pedantic -std=c++0x")
+add_definitions("-g -Wall -Wextra -pedantic -std=c++11")
 add_definitions(-DBOOST_VARIANT_NO_FULL_RECURSIVE_VARIANT_SUPPORT)
 add_definitions(-DGTEST)
 
